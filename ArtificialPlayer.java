@@ -1,10 +1,10 @@
 
 
-public class artificialplayer {
+public class ArtificialPlayer {
 
   String s;
 
-  public artificialplayer(String s) {
+  public ArtificialPlayer(String s) {
     this.s = s;
   }
 

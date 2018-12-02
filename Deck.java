@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class deck {
+public class Deck {
 
   String[] SUITS = {
             "C", "D", "H", "S"
@@ -16,7 +16,7 @@ public class deck {
   int n = SUITS.length * RANKS.length;
   String[] deck = new String[n];
 
-  public deck() {
+  public Deck() {
 
     for (int i = 0; i < RANKS.length; i++) {
       for (int j = 0; j < SUITS.length; j++) {
@@ -39,7 +39,6 @@ public class deck {
     for (int i = 0; i < deck.length; i++) {
       System.out.println(deck[i]);
     }
-    System.out.println(deck.length);
   }
 
   public String[] getDeck() {
