@@ -3,6 +3,8 @@
 public class Dealer {
 
   public String[] masterDeck = null;
+  private int deckPosition;
+  public Hand hand;
 
   public Dealer() {
     Deck[] decks = new Deck[6];
@@ -16,10 +18,20 @@ public class Dealer {
     }
 
     Deck.shuffleDeck(6, masterDeck);
+    deckPosition = 0;
+    hand = new Hand();
   }
 
   public void printDeck() {
     Deck.printDeck(masterDeck);
+  }
+
+  public int getDeckPosition() {
+    return deckPosition;
+  }
+
+  public String deal() {
+    return masterDeck[deckPosition++];
   }
 
 }
