@@ -66,6 +66,31 @@ public class Functions {
       }
       if (e.getActionCommand().equals("Stay")) {
         BlackJack.text.setText("Stay!");
+
+        int dealerTotal = dealer.checkIfBust(dealer.hand);
+        int playerTotal = dealer.checkIfBust(player.hand);
+
+        while (playerTotal > dealerTotal) {
+          if (dealer.hand.getCardThree() == null) {
+            dealer.hand.setCardThree(dealer.deal());
+          } else if (dealer.hand.getCardFour() == null) {
+            dealer.hand.setCardFour(dealer.deal());
+          } else if (dealer.hand.getCardFive() == null) {
+            dealer.hand.setCardFive(dealer.deal());
+          } else if (dealer.hand.getCardSix() == null) {
+            dealer.hand.setCardSix(dealer.deal());
+          }
+          dealerTotal = dealer.checkIfBust(dealer.hand);
+        }
+
+        if (dealerTotal > 21) {
+          BlackJack.text.setText("You Win!\nHouse loses.");
+        } else if (dealerTotal == playerTotal) {
+          BlackJack.text.setText("You Tied!\nNo one wins.");
+        } else if (dealerTotal > playerTotal) {
+          BlackJack.text.setText("You Lose!\nHouse wins.");
+        }
+
       }
       if (e.getActionCommand().equals("Quit")) {
         System.exit(0);
