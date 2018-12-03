@@ -27,6 +27,9 @@ public class Hand {
   public String getCardFive() {
     return cardFive;
   }
+  public String getCardSix() {
+    return cardSix;
+  }
 
   public void setCardone(String card) {
     cardOne = card;
@@ -42,5 +45,8 @@ public class Hand {
   }
   public void setCardFive(String card) {
     cardFive = card;
+  }
+  public void setCardSix(String card) {
+    cardSix = card;
   }
 }

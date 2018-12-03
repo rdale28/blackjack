@@ -31,7 +31,32 @@ public class Dealer {
   }
 
   public String deal() {
+    if (deckPosition >= masterDeck.length) {
+      Deck.shuffleDeck(6, masterDeck);
+      deckPosition = 0;
+    }
     return masterDeck[deckPosition++];
+  }
+
+  public int checkIfBust(Hand hand) {
+    int total = Deck.getPoints(hand.getCardOne());
+    total += Deck.getPoints(hand.getCardTwo());
+
+    if (hand.getCardThree() != null) {
+      total += Deck.getPoints(hand.getCardThree());
+    }
+    if (hand.getCardFour() != null) {
+      total += Deck.getPoints(hand.getCardFour());
+    }
+    if (hand.getCardFive() != null) {
+      total += Deck.getPoints(hand.getCardFive());
+    }
+    if (hand.getCardSix() != null) {
+      total += Deck.getPoints(hand.getCardSix());
+    }
+
+    return total;
+
   }
 
 }

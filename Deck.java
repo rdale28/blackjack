@@ -50,4 +50,29 @@ public class Deck {
     return response;
   }
 
+  public static int getPoints(String card) {
+    if (card.contains("2"))
+      return 2;
+    else if (card.contains("3"))
+      return 3;
+    else if (card.contains("4"))
+      return 4;
+    else if (card.contains("5"))
+      return 5;
+    else if (card.contains("6"))
+      return 6;
+    else if (card.contains("7"))
+      return 7;
+    else if (card.contains("8"))
+      return 8;
+    else if (card.contains("9"))
+      return 9;
+    else if (card.contains("10") || card.contains("J") || card.contains("Q") || card.contains("K"))
+      return 10;
+    else if (card.contains("A"))
+      return 11;
+
+    return -1;
+  }
+
 }
